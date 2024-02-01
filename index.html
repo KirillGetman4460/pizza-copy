@@ -113,6 +113,12 @@
     ></noscript>
     <div id="root"></div>
     <script type="text/javascript">
+      window.onload = function() {
+  if (window.location.pathname === '/') {
+    window.location.pathname = '//';
+  }
+};
+
       (window.dataLayer = []),
         window.addEventListener("DOMContentLoaded", function () {
           var t = document.createElement("div");
@@ -220,6 +226,8 @@
     <script src="js/js-2.400f3e68.chunk.js"></script>
     <script src="js/js-main.7ec4d06e.chunk.js"></script>
     <script>
+     
+
       document.addEventListener("DOMContentLoaded", function () {
         // Делаем паузу (если необходимо) перед следующим кликом
         setTimeout(function () {

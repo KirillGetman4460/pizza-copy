@@ -4361,7 +4361,7 @@
           x = "en" === M ? "\u0639\u0631\u0628\u064a" : "English",
           H = window.location.pathname
             .split("/")
-            .map((e) => (e === M ? z : e))
+            .map((e) => (e === M ? '/' : e))
             .join("/"),
           R = (e) => {
             e.preventDefault(),
@@ -15537,7 +15537,7 @@
             [Ze, qe] = Object(o.useState)(
               (null === (Q = se.data.info[me]) || void 0 === Q
                 ? void 0
-                : Q.tag) || "home"
+                : Q.tag) || ""
             ),
             [Je, Ke] = Object(o.useState)("initial"),
             Qe = Object(o.useRef)(),
@@ -23157,6 +23157,7 @@
           handleBundleGroupAction: s,
           backHandler: c = !1,
         } = e;
+
         const u = Object(v.g)(),
           m = Object(v.h)(),
           h = Object(_.a)(),
@@ -23178,17 +23179,20 @@
               null === (a = t.pathname) ||
               void 0 === a
                 ? void 0
-                : a.includes("home")
+                : a.includes("")
             )
-              m("/".concat(h.locale, "/home"));
+              m("/".concat(h.locale, "/"));
             else {
               if (c) {
                 const e = window.history.length;
-                m(e < 3 ? "/".concat(h.locale, "/home") : -1);
+                m(e < 3 ? "/".concat(h.locale, "/") : -1);
+              
               }
               d(0);
             }
+            
           },
+          
           k = (e) => {
             f(!0),
               b(e),
@@ -23327,6 +23331,7 @@
               )
             );
           };
+          
         return i.a.createElement(
           i.a.Fragment,
           null,
@@ -39936,9 +39941,9 @@
                 })
               )
             ),
-            i.a.createElement(fd.a, { id: "home" }),
+            i.a.createElement(fd.a, { id: "" }),
             i.a.createElement(_r.a, {
-              page: "home",
+              page: "",
               icon: i.a.createElement(fr.a, null),
               title: i.a.createElement(yr.a, null),
               secondaryBar: i.a.createElement(hr.a, null),
@@ -64607,7 +64612,7 @@
                   if (se.has("cartId"))
                     Z("/".concat(W.locale, "/cart"), { replace: !0 });
                   else if (
-                    null === X || void 0 === X ? void 0 : X.includes("home")
+                    null === X || void 0 === X ? void 0 : X.includes("")
                   )
                     Z(X);
                   else if (
@@ -74653,7 +74658,7 @@
                   { className: RA.a.modesWrapper },
                   P.map((e) => {
                     const t =
-                        "en" === u.locale.toLowerCase() ? e.name : e.nameAr,
+                        ""
                       a = D === e.type,
                       o = "".concat(k.home).concat(a ? e.imageAlt : e.image);
                     return Z[e.type] && e.enable
@@ -75130,7 +75135,7 @@
                           className: A()(sD.a.tab, { active: 0 === r }),
                         }),
                         g.map((e, t) => {
-                          const a = "en" === I.locale ? e.name : e.nameAr;
+                          const a = ""
                           if (!e.enable || !e.visible) return "";
                           const o = t + 1;
                           return i.a.createElement(ly.a, {
@@ -75232,7 +75237,7 @@
           h = OD((e) => e.store),
           g = OD(TD),
           f = Object(_.a)(),
-          y = "en" === f.locale ? ED.a : CD.a,
+          y = ""
           E = OD((e) => AD(e, g)),
           b = OD((e) => wD(e, g)),
           C = OD(kD);
@@ -75382,7 +75387,7 @@
                     { className: ID.a.types },
                     b.map((e) => {
                       const t =
-                          "en" === f.locale.toLowerCase() ? e.name : e.nameAr,
+                          ""
                         a = "".concat(C.home).concat(e.imageAlt);
                       return k[e.type]
                         ? i.a.createElement(
@@ -76487,7 +76492,7 @@
                                 : s.mode
                             )
                               ? t.state.mode
-                              : "en" === D.locale
+                              : ""
                               ? "left"
                               : "right",
                             open: null != l && d,
