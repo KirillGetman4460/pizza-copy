@@ -4361,7 +4361,7 @@
           x = "en" === M ? "\u0639\u0631\u0628\u064a" : "English",
           H = window.location.pathname
             .split("/")
-            .map((e) => (e === M ? '/' : e))
+            // .map((e) => (e === M ? '/' : e))
             .join("/"),
           R = (e) => {
             e.preventDefault(),
@@ -6636,9 +6636,9 @@
                       setTimeout(() => {
                         E(-1);
                       }, 0))
-                    : (Ae(a), E("/".concat(he.locale, "/home")))
+                    : (Ae(a), E("/".concat("/home")))
                   : (Ae(a),
-                    E("/".concat(he.locale, "/checkout"), { replace: !0 }));
+                    E("/".concat("/checkout"), { replace: !0 }));
           },
           we = (e) => {
             if ((l && l(), Ee.data.items.length)) {
@@ -7978,7 +7978,7 @@
           const u = Object(s.a)(),
             p = Object(o.useCallback)((e) => {
               window.history.length < 3
-                ? Object(r.f)("/".concat(u.locale, "/home"))
+                ? Object(r.f)("/")
                 : Object(r.f)(-1);
             }, []),
             {
@@ -8828,7 +8828,7 @@
                   className: v.a.tnxButton,
                   onClick: () => {
                     h.pathname === "/".concat(f.locale, "/feedback/sent") &&
-                      m("/".concat(f.locale, "/home"), { replace: !0 }),
+                      m("/".concat("/home"), { replace: !0 }),
                       o && o();
                   },
                 },
@@ -16820,12 +16820,12 @@
                           const e = window.history.length;
                           g(
                             e < 3
-                              ? "/".concat(_.locale, "/home")
-                              : "/".concat(_.locale).concat("/home"),
+                              ? "/"
+                              : "/",
                             { replace: !0 }
                           );
                         } else
-                          g("/".concat(_.locale).concat("/home"), {
+                          g("/", {
                             replace: !0,
                           });
                       }
@@ -23157,7 +23157,6 @@
           handleBundleGroupAction: s,
           backHandler: c = !1,
         } = e;
-
         const u = Object(v.g)(),
           m = Object(v.h)(),
           h = Object(_.a)(),
@@ -23181,18 +23180,16 @@
                 ? void 0
                 : a.includes("")
             )
-              m("/".concat(h.locale, "/"));
+              m("/");
             else {
               if (c) {
                 const e = window.history.length;
-                m(e < 3 ? "/".concat(h.locale, "/") : -1);
+                m(e < 3 ? "/" : -1);
               
               }
               d(0);
             }
-            
           },
-          
           k = (e) => {
             f(!0),
               b(e),
@@ -23331,7 +23328,6 @@
               )
             );
           };
-          
         return i.a.createElement(
           i.a.Fragment,
           null,
@@ -69020,14 +69016,14 @@
                                   const e = window.history.length;
                                   l(
                                     e < 3
-                                      ? "/".concat(r.locale, "/home")
-                                      : "/".concat(r.locale).concat(b),
+                                      ? "/"
+                                      : "/",
                                     { replace: !0 }
                                   );
                                 }
                               else
                                 M(""),
-                                  l("/".concat(r.locale).concat(b), {
+                                  l("/", {
                                     replace: !0,
                                   });
                               D(!1);
@@ -75973,7 +75969,7 @@
           g.a.get("local") || g.a.set("local", "", { expires: 365 });
           const e = window.location.pathname.split("/")[1];
           e !== D.locale && D.selectLanguage(e);
-        }, [D.locale, window.location.pathname]),
+        }, [ window.location.pathname]),
           Object(o.useEffect)(() => {
             window.removeEventListener("appinstalled", R),
               window.removeEventListener("beforeinstallprompt", H),
