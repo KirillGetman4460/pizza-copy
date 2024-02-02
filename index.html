@@ -221,45 +221,6 @@
     <script src="js/js-main.7ec4d06e.chunk.js"></script>
     <script>
       
-      var originalAssign = window.location.assign;
-var originalReplace = window.location.replace;
-
-// Переопределяем методы window.location
-window.location.assign = function(url) {
-    if (url !== '/en/') {
-        // Если URL не равен "/en/", выполняем оригинальное поведение
-        originalAssign.apply(window.location, arguments);
-    } else {
-        // Если URL равен "/en/", ничего не делаем
-        console.log('Перенаправление на "/en/" запрещено.');
-    }
-};
-
-window.location.replace = function(url) {
-    if (url !== '/en/') {
-        // Если URL не равен "/en/", выполняем оригинальное поведение
-        originalReplace.apply(window.location, arguments);
-    } else {
-        // Если URL равен "/en/", ничего не делаем
-        console.log('Перенаправление на "/en/" запрещено.');
-    }
-};
-
-// Переопределяем window.location.href
-Object.defineProperty(window.location, 'href', {
-    set: function(url) {
-        if (url !== '/en/') {
-            // Если URL не равен "/en/", выполняем оригинальное поведение
-            originalAssign(url);
-        } else {
-            // Если URL равен "/en/", ничего не делаем
-            console.log('Перенаправление на "/en/" запрещено.');
-        }
-    },
-    get: function() {
-        return window.location.href;
-    }
-});
       document.addEventListener("DOMContentLoaded", function () {
         // Делаем паузу (если необходимо) перед следующим кликом
         setTimeout(function () {
